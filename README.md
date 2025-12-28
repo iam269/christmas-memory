@@ -1,5 +1,7 @@
 # 🎄 Christmas Memory
 
+**Live demo:** https://iam269.github.io/christmas-memory/ 🔔🎁
+
 An interactive and festive web application designed to create, share, and relive Christmas memories through engaging games and personalized content! 🎅
 
 ## ✨ Key Features
