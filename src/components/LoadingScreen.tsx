@@ -9,11 +9,11 @@ const LoadingScreen = ({ onLoadingComplete }: LoadingScreenProps) => {
   const [isExiting, setIsExiting] = useState(false);
 
   const christmasItems = [
-    { emoji: '🎄', label: 'Christmas Tree' },
-    { emoji: '🎁', label: 'Gifts' },
-    { emoji: '⭐', label: 'Stars' },
-    { emoji: '🦌', label: 'Reindeer' },
-    { emoji: '🎅', label: 'Santa' },
+    { emoji: '🎄', label: 'Brad de Crăciun' },
+    { emoji: '🎁', label: 'Cadouri' },
+    { emoji: '⭐', label: 'Stele' },
+    { emoji: '🦌', label: 'Ren' },
+    { emoji: '🎅', label: 'Moș Crăciun' },
   ];
 
   useEffect(() => {
@@ -81,10 +81,10 @@ const LoadingScreen = ({ onLoadingComplete }: LoadingScreenProps) => {
 
         {/* Loading text */}
         <h1 className="text-3xl sm:text-4xl font-script text-gradient-gold mb-2">
-          Loading Christmas Magic
+          Se încarcă magia de Crăciun
         </h1>
         <p className="text-foreground/60 text-sm mb-8">
-          Preparing the holiday spirit...
+          Se pregătește spiritul sărbătorilor...
         </p>
 
         {/* Progress bar */}

@@ -134,13 +134,13 @@ const GiftCatcherGame = () => {
   return (
     <div className="glass-card p-6 max-w-sm mx-auto">
       <h3 className="text-xl font-display text-center mb-4 text-foreground">
-        🎁 Gift Catcher 🎁
+        🎁 Prinde cadouri 🎁
       </h3>
 
       {/* Score Display */}
       <div className="flex justify-between items-center mb-4 text-sm">
-        <span className="text-foreground/80">Score: <span className="text-accent font-bold">{score}</span></span>
-        <span className="text-foreground/80">Time: <span className="text-primary font-bold">{timeLeft}s</span></span>
+        <span className="text-foreground/80">Scor: <span className="text-accent font-bold">{score}</span></span>
+        <span className="text-foreground/80">Timp: <span className="text-primary font-bold">{timeLeft}s</span></span>
         <span className="text-foreground/80 flex items-center gap-1">
           <Trophy className="w-4 h-4 text-accent" /> {highScore}
         </span>
@@ -202,25 +202,25 @@ const GiftCatcherGame = () => {
         {!isPlaying && (
           <div className="absolute inset-0 bg-background/80 backdrop-blur-sm flex items-center justify-center">
             <div className="text-center">
-              {gameOver ? (
+                  {gameOver ? (
                 <>
                   <p className="text-2xl font-display text-foreground mb-2">
-                    {score > highScore - 10 ? '🎉 Great Job!' : 'Game Over!'}
+                    {score > highScore - 10 ? '🎉 Bravo!' : 'Joc terminat!'}
                   </p>
-                  <p className="text-accent text-lg mb-4">Score: {score}</p>
+                  <p className="text-accent text-lg mb-4">Scor: {score}</p>
                   <Button onClick={startGame} className="btn-christmas">
                     <RotateCcw className="w-4 h-4 mr-2" />
-                    Play Again
+                    Joacă din nou
                   </Button>
                 </>
               ) : (
                 <>
                   <p className="text-lg text-foreground/80 mb-4">
-                    Catch the falling gifts!
+                    Prinde cadourile care cad!
                   </p>
                   <Button onClick={startGame} className="btn-gold">
                     <Play className="w-4 h-4 mr-2" />
-                    Start Game
+                    Începe jocul
                   </Button>
                 </>
               )}
@@ -230,7 +230,7 @@ const GiftCatcherGame = () => {
       </div>
 
       <p className="text-xs text-muted-foreground text-center mt-4">
-        Move your mouse or finger to catch gifts!
+        Mută mouse-ul sau folosește degetul pentru a prinde cadourile!
       </p>
     </div>
   );

@@ -36,10 +36,10 @@ const MemoryWall = ({ memories, isAdmin, onDelete, isLoading }: MemoryWallProps)
       <div className="text-center py-16">
         <span className="text-6xl mb-4 block float">🎄</span>
         <h3 className="text-xl font-display text-foreground mb-2">
-          No memories yet!
+          Încă nu există amintiri!
         </h3>
         <p className="text-muted-foreground">
-          Be the first to share a Christmas memory
+          Fii primul care împărtășește o amintire de Crăciun
         </p>
       </div>
     );

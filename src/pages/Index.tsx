@@ -48,7 +48,7 @@ const Index = () => {
           <div className="flex items-center gap-2">
             <TreePine className="w-6 h-6 text-secondary" />
             <span className="font-display text-lg text-foreground hidden sm:block">
-              Christmas Memories
+              Amintiri de Crăciun
             </span>
           </div>
           <div className="flex items-center gap-2">
@@ -64,12 +64,12 @@ const Index = () => {
         <div className="text-center animate-fade-in z-20">
           <span className="text-7xl sm:text-8xl block mb-6 float">🎄</span>
           <h1 className="text-5xl sm:text-7xl lg:text-8xl font-script mb-6">
-            <span className="text-gradient-gold">Our Shared</span>
+            <span className="text-gradient-gold">Amintirile noastre</span>
             <br />
-            <span className="text-gradient-christmas">Christmas Memories</span>
+            <span className="text-gradient-christmas">de Crăciun</span>
           </h1>
           <p className="text-lg sm:text-xl text-foreground/70 max-w-md mx-auto mb-8">
-            Share your favorite moments and memories with friends and family this holiday season
+            Împărtășește momentele și amintirile tale preferate cu prietenii și familia în acest sezon de sărbători
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -78,7 +78,7 @@ const Index = () => {
               className="btn-christmas text-lg px-8 py-6"
             >
               <Gift className="w-5 h-5 mr-2" />
-              Add a Memory 🎁
+              Adaugă o amintire 🎁
             </Button>
             <Button
               onClick={scrollToGame}
@@ -86,7 +86,7 @@ const Index = () => {
               className="bg-muted/30 border-accent/30 text-foreground hover:bg-muted/50 text-lg px-8 py-6"
             >
               <Gamepad2 className="w-5 h-5 mr-2" />
-              Play Game 🎮
+              Joacă 🎮
             </Button>
           </div>
         </div>
@@ -115,10 +115,10 @@ const Index = () => {
         <div className="container mx-auto max-w-lg">
           <div className="text-center mb-10 animate-fade-in-up">
             <h2 className="text-3xl sm:text-4xl font-display font-bold text-foreground mb-4">
-              Share Your Memory ✨
+              Împărtășește o amintire ✨
             </h2>
             <p className="text-foreground/60">
-              Write a message for everyone to see
+              Scrie un mesaj ca toată lumea să-l vadă
             </p>
           </div>
           
@@ -133,10 +133,10 @@ const Index = () => {
         <div className="container mx-auto">
           <div className="text-center mb-10 animate-fade-in-up">
             <h2 className="text-3xl sm:text-4xl font-display font-bold text-foreground mb-4">
-              Memory Wall 🎄
+              Perete de amintiri 🎄
             </h2>
             <p className="text-foreground/60">
-              {memories.length} {memories.length === 1 ? 'memory' : 'memories'} shared
+              {memories.length} {memories.length === 1 ? 'amintire partajată' : 'amintiri partajate'}
             </p>
           </div>
           
@@ -154,10 +154,10 @@ const Index = () => {
         <div className="container mx-auto">
           <div className="text-center mb-10 animate-fade-in-up">
             <h2 className="text-3xl sm:text-4xl font-display font-bold text-foreground mb-4">
-              Take a Break 🎮
+              Ia o pauză 🎮
             </h2>
             <p className="text-foreground/60">
-              Play a quick Christmas mini-game!
+              Joacă un mini-joc de Crăciun!
             </p>
           </div>
           
@@ -167,14 +167,14 @@ const Index = () => {
           <div className="mt-10 max-w-md mx-auto">
             <div className="glass-card p-6 text-center">
               <h3 className="text-xl font-script text-gradient-gold mb-4">
-                How to Play
+                Cum să joci
               </h3>
               <div className="space-y-3 text-sm text-foreground/80">
-                <p>🎮 Use ← → arrow keys or move your mouse</p>
-                <p>🎁 Catch falling gifts with your basket</p>
-                <p>⭐ Stars = 3 points, 🍪 Cookies = 2 points</p>
-                <p>💨 Game speeds up as you score more!</p>
-                <p>❌ Miss 5 gifts and it's game over</p>
+                <p>🎮 Folosește tastele ← → sau mută mouse-ul</p>
+                <p>🎁 Prinde cadourile care cad cu coșul</p>
+                <p>⭐ Stele = 3 puncte, 🍪 Fursecuri = 2 puncte</p>
+                <p>💨 Jocul se accelerează pe măsură ce obții puncte!</p>
+                <p>❌ Ratezi 5 cadouri și jocul se termină</p>
               </div>
             </div>
           </div>
@@ -187,11 +187,11 @@ const Index = () => {
           {/* Thank You Message */}
           <div className="mb-8">
             <h3 className="text-3xl sm:text-4xl font-script text-gradient-gold mb-4">
-              Thank You for Visiting! 🎅
+              Mulțumim pentru vizită! 🎅
             </h3>
             <p className="text-foreground/70 text-base sm:text-lg leading-relaxed">
-              May your holidays be filled with warmth, love, and endless joy. 
-              Wishing you a Merry Christmas and a Happy New Year!
+              Îți dorim să ai sărbători pline de căldură, iubire și bucurie.
+              Îți dorim un Crăciun fericit și un An Nou fericit!
             </p>
           </div>
 
@@ -200,7 +200,7 @@ const Index = () => {
 
           {/* Made with love */}
           <p className="text-muted-foreground text-sm mb-4">
-            Made with ❤️ and holiday spirit • 2025
+            Creat cu ❤️ și spirit de sărbătoare • 2025
           </p>
 
           {/* Snowflake decoration */}
@@ -211,11 +211,6 @@ const Index = () => {
             <span className="animate-pulse" style={{ animationDelay: '0.6s' }}>❄️</span>
             <span className="animate-pulse" style={{ animationDelay: '0.8s' }}>❄️</span>
           </div>
-
-          {/* Easter egg hint */}
-          <p className="text-muted-foreground/40 text-xs">
-            Hint: Try the Konami code ↑↑↓↓←→←→ 🎅
-          </p>
         </div>
       </footer>
     </div>

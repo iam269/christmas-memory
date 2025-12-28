@@ -22,13 +22,13 @@ const MemoryForm = ({ onSubmit, isSubmitting }: MemoryFormProps) => {
     const newErrors: { name?: string; message?: string } = {};
     
     if (!name.trim()) {
-      newErrors.name = 'Name is required';
+      newErrors.name = 'Numele este obligatoriu';
     }
     
     if (!message.trim()) {
-      newErrors.message = 'Message is required';
+      newErrors.message = 'Mesajul este obligatoriu';
     } else if (message.length > 200) {
-      newErrors.message = 'Message must be 200 characters or less';
+      newErrors.message = 'Mesajul trebuie să aibă cel mult 200 de caractere';
     }
 
     setErrors(newErrors);
@@ -60,7 +60,7 @@ const MemoryForm = ({ onSubmit, isSubmitting }: MemoryFormProps) => {
           <div className="text-center animate-scale-in">
             <Sparkles className="w-16 h-16 text-accent mx-auto sparkle" />
             <p className="text-2xl font-display text-foreground mt-4">
-              Memory Added! 🎄
+              Amintire adăugată! 🎄
             </p>
           </div>
         </div>
@@ -68,13 +68,13 @@ const MemoryForm = ({ onSubmit, isSubmitting }: MemoryFormProps) => {
 
       <div className="space-y-2">
         <label htmlFor="name" className="text-sm font-medium text-foreground/80">
-          Your Name
+          Numele tău
         </label>
         <Input
           id="name"
           value={name}
           onChange={(e) => setName(e.target.value)}
-          placeholder="Enter your name"
+          placeholder="Introdu numele tău"
           className={cn(
             'bg-muted/50 border-border/50 focus:border-accent transition-colors',
             errors.name && 'border-destructive'
@@ -87,14 +87,14 @@ const MemoryForm = ({ onSubmit, isSubmitting }: MemoryFormProps) => {
 
       <div className="space-y-2">
         <label htmlFor="message" className="text-sm font-medium text-foreground/80">
-          Your Memory
+          Amintirea ta
           <span className="text-muted-foreground ml-2">({message.length}/200)</span>
         </label>
         <Textarea
           id="message"
           value={message}
           onChange={(e) => setMessage(e.target.value)}
-          placeholder="Share your favorite Christmas memory..."
+          placeholder="Împărtășește amintirea ta preferată de Crăciun..."
           maxLength={200}
           rows={4}
           className={cn(
@@ -114,15 +114,15 @@ const MemoryForm = ({ onSubmit, isSubmitting }: MemoryFormProps) => {
         disabled={isSubmitting}
         className="w-full btn-christmas"
       >
-        {isSubmitting ? (
+            {isSubmitting ? (
           <span className="flex items-center gap-2">
             <span className="animate-spin">⭐</span>
-            Adding Memory...
+            Se adaugă amintirea...
           </span>
         ) : (
           <span className="flex items-center gap-2">
             <Send className="w-4 h-4" />
-            Share Memory 🎁
+            Trimite amintirea 🎁
           </span>
         )}
       </Button>

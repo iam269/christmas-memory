@@ -7,15 +7,28 @@ const SoundToggle = () => {
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
-    // Create audio element for ambient Christmas music
-    // Using a royalty-free Christmas melody
-    audioRef.current = new Audio('https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3');
-    audioRef.current.loop = true;
-    audioRef.current.volume = 0.3;
+    // Try to load a local Mariah Carey mp3 placed in `public/mariah-carey.mp3`.
+    // If not available, fall back to a royalty-free example.
+    const localSrc = '/mariah-carey.mp3';
+    const fallbackSrc = 'public/Mariah Carey - All I Want For Christmas Is You (Official Video).mp3';
+
+    const audio = new Audio(localSrc);
+    audio.loop = true;
+    audio.volume = 0.3;
+
+    const onError = () => {
+      // fallback if local file not found or can't be loaded
+      audio.src = fallbackSrc;
+      audio.load();
+    };
+
+    audio.addEventListener('error', onError);
+    audioRef.current = audio;
 
     return () => {
       if (audioRef.current) {
         audioRef.current.pause();
+        audioRef.current.removeEventListener('error', onError);
         audioRef.current = null;
       }
     };
@@ -40,7 +53,7 @@ const SoundToggle = () => {
       size="icon"
       onClick={toggleSound}
       className="rounded-full bg-muted/30 hover:bg-muted/50 transition-colors"
-      title={isMuted ? 'Turn on music' : 'Turn off music'}
+      title={isMuted ? 'Activează muzica' : 'Dezactivează muzica'}
     >
       {isMuted ? (
         <VolumeX className="w-5 h-5 text-muted-foreground" />

@@ -24,7 +24,7 @@ const AdminPanel = ({ isAdmin, onAdminLogin }: AdminPanelProps) => {
       setKey('');
       setError('');
     } else {
-      setError('Invalid admin key');
+      setError('Cheie admin invalidă');
     }
   };
 
@@ -38,7 +38,7 @@ const AdminPanel = ({ isAdmin, onAdminLogin }: AdminPanelProps) => {
       <div className="flex items-center gap-2">
         <span className="text-xs text-secondary flex items-center gap-1">
           <ShieldCheck className="w-4 h-4" />
-          Admin Mode
+          Mod admin
         </span>
         <Button
           variant="ghost"
@@ -54,12 +54,12 @@ const AdminPanel = ({ isAdmin, onAdminLogin }: AdminPanelProps) => {
 
   return (
     <div className="relative">
-      <Button
+        <Button
         variant="ghost"
         size="icon"
         onClick={() => setShowInput(!showInput)}
         className="opacity-30 hover:opacity-100 transition-opacity"
-        title="Admin Login"
+        title="Autentificare admin"
       >
         <Shield className="w-4 h-4" />
       </Button>
@@ -69,16 +69,16 @@ const AdminPanel = ({ isAdmin, onAdminLogin }: AdminPanelProps) => {
           onSubmit={handleSubmit}
           className="absolute right-0 top-full mt-2 glass-card p-3 z-50 min-w-[200px]"
         >
-          <Input
+            <Input
             type="password"
             value={key}
             onChange={(e) => setKey(e.target.value)}
-            placeholder="Admin key"
+            placeholder="Cheie admin"
             className="bg-muted/50 text-sm mb-2"
           />
           {error && <p className="text-destructive text-xs mb-2">{error}</p>}
           <Button type="submit" size="sm" className="w-full btn-christmas text-xs">
-            Login
+            Autentificare
           </Button>
         </form>
       )}

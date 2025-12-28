@@ -21,7 +21,7 @@ const MemoryCard = ({ memory, index, isAdmin, onDelete }: MemoryCardProps) => {
   const glowClass = glowColors[index % 3];
 
   const formatDate = (date: Date) => {
-    return new Intl.DateTimeFormat('en-US', {
+    return new Intl.DateTimeFormat('ro-RO', {
       month: 'short',
       day: 'numeric',
       hour: '2-digit',

@@ -50,10 +50,10 @@ const ChristmasCountdown = () => {
     return (
       <div className="glass-card p-8 text-center glow-red animate-pulse-glow">
         <h2 className="text-3xl sm:text-4xl font-display font-bold text-gradient-christmas mb-4">
-          🎄 Merry Christmas! 🎄
+          🎄 Crăciun fericit! 🎄
         </h2>
         <p className="text-foreground/80 text-lg">
-          Wishing you joy and happiness!
+          Îți dorim bucurie și fericire!
         </p>
       </div>
     );
@@ -91,7 +91,7 @@ const ChristmasCountdown = () => {
       <div className="mb-6">
         <span className="text-4xl mb-2 block">🎅</span>
         <h3 className="text-xl sm:text-2xl font-display font-bold text-foreground">
-          Time Until Christmas
+          Timp până la Crăciun
         </h3>
         <div className="flex justify-center gap-1 mt-2">
           {['❄️', '🎄', '⭐', '🎄', '❄️'].map((emoji, i) => (
@@ -102,33 +102,33 @@ const ChristmasCountdown = () => {
 
       {/* Countdown blocks */}
       <div className="flex justify-center gap-3 sm:gap-4 md:gap-6">
-        <TimeBlock value={timeLeft.days} label="Days" />
+        <TimeBlock value={timeLeft.days} label="Zile" />
         
         {/* Separator */}
         <div className="flex flex-col justify-center gap-2 text-accent/60 font-bold text-xl">
           <span className="animate-pulse">:</span>
         </div>
         
-        <TimeBlock value={timeLeft.hours} label="Hours" />
+        <TimeBlock value={timeLeft.hours} label="Ore" />
         
         <div className="flex flex-col justify-center gap-2 text-accent/60 font-bold text-xl">
           <span className="animate-pulse">:</span>
         </div>
         
-        <TimeBlock value={timeLeft.minutes} label="Mins" />
+        <TimeBlock value={timeLeft.minutes} label="Min" />
         
         <div className="hidden sm:flex flex-col justify-center gap-2 text-accent/60 font-bold text-xl">
           <span className="animate-pulse">:</span>
         </div>
         
         <div className="hidden sm:block">
-          <TimeBlock value={timeLeft.seconds} label="Secs" />
+          <TimeBlock value={timeLeft.seconds} label="Sec" />
         </div>
       </div>
 
       {/* Decorative message */}
       <p className="mt-6 text-foreground/50 text-sm italic">
-        ✨ The magic is almost here! ✨
+        ✨ Magia este aproape! ✨
       </p>
     </div>
   );
