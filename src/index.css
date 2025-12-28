@@ -1,0 +1,380 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Christmas Night Theme (Default) */
+    --background: 220 30% 8%;
+    --foreground: 45 100% 96%;
+
+    --card: 220 25% 12%;
+    --card-foreground: 45 100% 96%;
+
+    --popover: 220 25% 12%;
+    --popover-foreground: 45 100% 96%;
+
+    /* Christmas Red */
+    --primary: 352 83% 45%;
+    --primary-foreground: 45 100% 96%;
+
+    /* Christmas Green */
+    --secondary: 145 63% 32%;
+    --secondary-foreground: 45 100% 96%;
+
+    /* Soft Snow */
+    --muted: 220 20% 18%;
+    --muted-foreground: 220 15% 65%;
+
+    /* Christmas Gold */
+    --accent: 43 96% 56%;
+    --accent-foreground: 220 30% 8%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 45 100% 96%;
+
+    --border: 220 20% 20%;
+    --input: 220 20% 20%;
+    --ring: 43 96% 56%;
+
+    --radius: 1rem;
+
+    /* Custom Christmas Colors */
+    --christmas-red: 352 83% 45%;
+    --christmas-red-glow: 352 83% 55%;
+    --christmas-green: 145 63% 32%;
+    --christmas-green-glow: 145 63% 42%;
+    --christmas-gold: 43 96% 56%;
+    --christmas-gold-glow: 43 96% 66%;
+    --snow: 210 40% 98%;
+    --snow-soft: 210 20% 90%;
+    --night-sky: 220 30% 8%;
+    --night-sky-light: 220 25% 15%;
+
+    /* Glassmorphism */
+    --glass-bg: 220 30% 15% / 0.6;
+    --glass-border: 220 30% 30% / 0.3;
+    --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    /* Gradients */
+    --gradient-christmas: linear-gradient(135deg, hsl(var(--christmas-red)) 0%, hsl(var(--christmas-green)) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(43 96% 46%) 0%, hsl(var(--christmas-gold)) 50%, hsl(43 96% 66%) 100%);
+    --gradient-night: linear-gradient(180deg, hsl(220 30% 5%) 0%, hsl(220 30% 12%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(220 25% 14%) 0%, hsl(220 25% 10%) 100%);
+
+    /* Fonts */
+    --font-display: 'Playfair Display', serif;
+    --font-body: 'Quicksand', sans-serif;
+
+    --sidebar-background: 220 30% 8%;
+    --sidebar-foreground: 45 100% 96%;
+    --sidebar-primary: 352 83% 45%;
+    --sidebar-primary-foreground: 45 100% 96%;
+    --sidebar-accent: 220 25% 15%;
+    --sidebar-accent-foreground: 45 100% 96%;
+    --sidebar-border: 220 20% 20%;
+    --sidebar-ring: 43 96% 56%;
+  }
+
+  .light {
+    /* Warm Christmas Day Theme */
+    --background: 45 30% 96%;
+    --foreground: 220 30% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 30% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 30% 15%;
+
+    --primary: 352 83% 42%;
+    --primary-foreground: 45 100% 96%;
+
+    --secondary: 145 63% 28%;
+    --secondary-foreground: 45 100% 96%;
+
+    --muted: 45 20% 90%;
+    --muted-foreground: 220 15% 40%;
+
+    --accent: 43 96% 50%;
+    --accent-foreground: 220 30% 15%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 45 100% 96%;
+
+    --border: 45 20% 85%;
+    --input: 45 20% 85%;
+    --ring: 352 83% 42%;
+
+    --glass-bg: 0 0% 100% / 0.7;
+    --glass-border: 45 20% 80% / 0.5;
+    --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+
+    --gradient-night: linear-gradient(180deg, hsl(45 30% 98%) 0%, hsl(45 25% 92%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(45 20% 96%) 100%);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+}
+
+@layer components {
+  /* Glassmorphism Card */
+  .glass-card {
+    background: hsl(var(--glass-bg));
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid hsl(var(--glass-border));
+    box-shadow: var(--glass-shadow);
+    border-radius: var(--radius);
+  }
+
+  /* Christmas Glow Effects */
+  .glow-red {
+    box-shadow: 0 0 20px hsl(var(--christmas-red-glow) / 0.4),
+                0 0 40px hsl(var(--christmas-red-glow) / 0.2);
+  }
+
+  .glow-green {
+    box-shadow: 0 0 20px hsl(var(--christmas-green-glow) / 0.4),
+                0 0 40px hsl(var(--christmas-green-glow) / 0.2);
+  }
+
+  .glow-gold {
+    box-shadow: 0 0 20px hsl(var(--christmas-gold-glow) / 0.4),
+                0 0 40px hsl(var(--christmas-gold-glow) / 0.2);
+  }
+
+  /* Text Gradients */
+  .text-gradient-christmas {
+    background: var(--gradient-christmas);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-gold {
+    background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Animated Snowflake */
+  .snowflake {
+    position: fixed;
+    top: -10px;
+    color: hsl(var(--snow));
+    font-size: 1rem;
+    pointer-events: none;
+    z-index: 50;
+    animation: snowfall linear infinite;
+    text-shadow: 0 0 5px hsl(var(--snow-soft));
+  }
+
+  @keyframes snowfall {
+    0% {
+      transform: translateY(-10px) rotate(0deg);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(100vh) rotate(360deg);
+      opacity: 0.3;
+    }
+  }
+
+  /* Float Animation */
+  .float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+  /* Pulse Glow */
+  .pulse-glow {
+    animation: pulseGlow 2s ease-in-out infinite;
+  }
+
+  @keyframes pulseGlow {
+    0%, 100% {
+      box-shadow: 0 0 20px hsl(var(--christmas-gold) / 0.3);
+    }
+    50% {
+      box-shadow: 0 0 40px hsl(var(--christmas-gold) / 0.6),
+                  0 0 60px hsl(var(--christmas-gold) / 0.3);
+    }
+  }
+
+  /* Shimmer Effect */
+  .shimmer {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .shimmer::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      hsl(var(--snow) / 0.2),
+      transparent
+    );
+    animation: shimmer 3s infinite;
+  }
+
+  @keyframes shimmer {
+    0% {
+      left: -100%;
+    }
+    100% {
+      left: 100%;
+    }
+  }
+
+  /* Falling Animation for Loading Screen */
+  .animate-fall {
+    animation: fall linear infinite;
+  }
+
+  @keyframes fall {
+    0% {
+      transform: translateY(-20px) rotate(0deg);
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(100vh) rotate(360deg);
+      opacity: 0;
+    }
+  }
+
+  /* Shimmer animation for progress bar */
+  .animate-shimmer {
+    animation: shimmer 1.5s infinite;
+  }
+
+  /* Card Entrance Animation */
+  .card-enter {
+    animation: cardEnter 0.5s ease-out forwards;
+  }
+
+  @keyframes cardEnter {
+    0% {
+      opacity: 0;
+      transform: translateY(30px) scale(0.9);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  /* Sparkle Animation */
+  .sparkle {
+    animation: sparkle 1.5s ease-in-out infinite;
+  }
+
+  @keyframes sparkle {
+    0%, 100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.5;
+      transform: scale(1.2);
+    }
+  }
+
+  /* Button Christmas Variant */
+  .btn-christmas {
+    background: var(--gradient-christmas);
+    color: hsl(var(--snow));
+    font-weight: 600;
+    padding: 0.75rem 2rem;
+    border-radius: 9999px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px hsl(var(--christmas-red) / 0.3);
+  }
+
+  .btn-christmas:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px hsl(var(--christmas-red) / 0.5);
+  }
+
+  .btn-gold {
+    background: var(--gradient-gold);
+    color: hsl(var(--night-sky));
+    font-weight: 600;
+    padding: 0.75rem 2rem;
+    border-radius: 9999px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px hsl(var(--christmas-gold) / 0.3);
+  }
+
+  .btn-gold:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px hsl(var(--christmas-gold) / 0.5);
+  }
+
+  /* Ornament swing */
+  .ornament-swing {
+    transform-origin: top center;
+    animation: swing 4s ease-in-out infinite;
+  }
+
+  @keyframes swing {
+    0%, 100% {
+      transform: rotate(-5deg);
+    }
+    50% {
+      transform: rotate(5deg);
+    }
+  }
+}
+
+@layer utilities {
+  .text-shadow-glow {
+    text-shadow: 0 0 10px currentColor, 0 0 20px currentColor;
+  }
+
+  .backdrop-blur-glass {
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+}
