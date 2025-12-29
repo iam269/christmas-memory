@@ -10,11 +10,12 @@ import EasterEgg from '@/components/EasterEgg';
 import ChristmasCountdown from '@/components/ChristmasCountdown';
 import LoadingScreen from '@/components/LoadingScreen';
 import useMemories from '@/hooks/useMemories';
+import ExportImport from '@/components/ExportImport';
 import { ChevronDown, Gift, TreePine, Gamepad2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const Index = () => {
-  const { memories, isLoading, addMemory, deleteMemory } = useMemories();
+  const { memories, isLoading, addMemory, deleteMemory, importMemories, clearMemories } = useMemories();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isAdmin, setIsAdmin] = useState(false);
   const [showLoading, setShowLoading] = useState(true);
@@ -146,6 +147,16 @@ const Index = () => {
             isAdmin={isAdmin}
             onDelete={deleteMemory}
           />
+
+          {isAdmin && (
+            <div className="mt-8">
+              <ExportImport
+                memories={memories}
+                importMemories={importMemories}
+                clearMemories={clearMemories}
+              />
+            </div>
+          )}
         </div>
       </section>
 

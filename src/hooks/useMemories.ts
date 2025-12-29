@@ -43,6 +43,29 @@ export const useMemories = () => {
     }
   }, [memories, isLoading]);
 
+  // Import a set of memories (replace or prepend)
+  const importMemories = async (items: any[], options?: { replace?: boolean }) => {
+    try {
+      const normalized = items.map((m: any) => ({
+        ...m,
+        id: m.id ?? generateId(),
+        timestamp: m.timestamp ? new Date(m.timestamp) : new Date(),
+      }));
+
+      if (options?.replace) {
+        setMemories(normalized);
+      } else {
+        setMemories((prev) => [...normalized, ...prev]);
+      }
+    } catch (error) {
+      console.error('Error importing memories:', error);
+    }
+  };
+
+  const clearMemories = async () => {
+    setMemories([]);
+  };
+
   const addMemory = async (data: { name: string; message: string; emoji: string }) => {
     const newMemory: Memory = {
       id: generateId(),
@@ -65,6 +88,8 @@ export const useMemories = () => {
     isLoading,
     addMemory,
     deleteMemory,
+    importMemories,
+    clearMemories,
   };
 };
 
