@@ -211,7 +211,7 @@ const Index = () => {
 
           {/* Made with love */}
           <p className="text-muted-foreground text-sm mb-4">
-            Creat cu ❤️ și spirit de sărbătoare • 2025
+            Creat de Ioniță Aurel-Mihai cu ❤️ și spirit de sărbătoare • 2025
           </p>
 
           {/* Snowflake decoration */}

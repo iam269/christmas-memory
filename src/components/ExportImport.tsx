@@ -22,15 +22,15 @@ const ExportImport = ({ memories, importMemories, clearMemories }: ExportImportP
     URL.revokeObjectURL(url);
   };
 
-  const handleFile = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleFile = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const f = e.target.files?.[0];
     if (!f) return;
     const reader = new FileReader();
-    reader.onload = () => {
+    reader.onload = async () => {
       try {
         const parsed = JSON.parse(String(reader.result));
         if (!Array.isArray(parsed)) throw new Error('Format invalid');
-        importMemories(parsed, true);
+        await importMemories(parsed, true);
         alert('Amintirile au fost importate.');
       } catch (err: any) {
         alert('Eroare la import: ' + (err?.message || String(err)));

@@ -44,7 +44,7 @@ export const useMemories = () => {
   }, [memories, isLoading]);
 
   // Import a set of memories (replace or prepend)
-  const importMemories = async (items: any[], options?: { replace?: boolean }) => {
+  const importMemories = async (items: any[], replace?: boolean) => {
     try {
       const normalized = items.map((m: any) => ({
         ...m,
@@ -52,7 +52,7 @@ export const useMemories = () => {
         timestamp: m.timestamp ? new Date(m.timestamp) : new Date(),
       }));
 
-      if (options?.replace) {
+      if (replace) {
         setMemories(normalized);
       } else {
         setMemories((prev) => [...normalized, ...prev]);
